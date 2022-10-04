@@ -5,7 +5,8 @@ from DataItem import DataItem
 
 class DatasetLoader:
     def __init__(self):
-        self._categories = ['business', 'entertainment', 'politics', 'sport', 'tech']
+        self._categories = ['business', 'entertainment', 'politics',
+                            'tech']  # FIXME: there is a problem with one of the files in the 'sport' category
         self._dataset_directories = {
             'articles': '/Users/grigordochev/PycharmProjects/News-Text-Summarization/BBC News Summary Dataset/News Articles/',
             'summaries': '/Users/grigordochev/PycharmProjects/News-Text-Summarization/BBC News Summary Dataset/Summaries/'}
@@ -21,7 +22,7 @@ class DatasetLoader:
                 try:
                     with open(file_path) as file:
                         data = file.read()  # .replace('\n', '')
-                        summaries[filename] = data
+                        articles[filename] = data
                 except UnicodeDecodeError as error:
                     print(error, 'File:', file_path)
 
