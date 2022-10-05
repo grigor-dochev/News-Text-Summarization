@@ -1,5 +1,6 @@
 from DataItem import DataItem
 from DatasetLoader import DatasetLoader
+from LexRank import LexRankSummarizer
 from TextRank import TextRank
 from rouge import Rouge
 
@@ -25,3 +26,6 @@ print(example_summary)
 rouge = Rouge()
 scores = rouge.get_scores(textrank_summary, example_summary)
 print(scores)
+
+lexrank = LexRankSummarizer()
+lexrank.__call__([data_item.get_article()], '')
