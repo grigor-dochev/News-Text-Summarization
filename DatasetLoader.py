@@ -7,9 +7,10 @@ class DatasetLoader:
     def __init__(self):
         self._categories = ['business', 'entertainment', 'politics',
                             'tech']  # FIXME: there is a problem with one of the files in the 'sport' category
+
         self._dataset_directories = {
-            'articles': '/Users/grigordochev/PycharmProjects/News-Text-Summarization/BBC News Summary Dataset/News Articles/',
-            'summaries': '/Users/grigordochev/PycharmProjects/News-Text-Summarization/BBC News Summary Dataset/Summaries/'}
+            'articles': os.path.join(os.path.dirname(__file__), 'BBC News Summary Dataset/News Articles/'),
+            'summaries': os.path.join(os.path.dirname(__file__), 'BBC News Summary Dataset/Summaries/')}
 
     def __load_category(self, category) -> [DataItem]:
         data_items: [DataItem] = []
